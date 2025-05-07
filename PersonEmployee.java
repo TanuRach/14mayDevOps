@@ -1,35 +1,32 @@
-// File: PersonEmployee.java
-import java.time.LocalDate;
-import java.time.Period;
-
 public class PersonEmployee {
     String name;
-    LocalDate dob;
+    int age;
 
-    public PersonEmployee(String name, String dobStr) {
+    // Constructor for PersonEmployee
+    public PersonEmployee(String name, int age) {
         this.name = name;
-        this.dob = LocalDate.parse(dobStr);
+        this.age = age;
     }
 
-    public int getAge() {
-        return Period.between(dob, LocalDate.now()).getYears();
-    }
-
+    // Method to display person details
     public void displayPerson() {
         System.out.println("Name: " + name);
-        System.out.println("Age: " + getAge());
+        System.out.println("Age: " + age);
     }
 
+    // Nested Employee class
     static class Employee extends PersonEmployee {
         String empId;
         double salary;
 
-        public Employee(String name, String dobStr, String empId, double salary) {
-            super(name, dobStr);
+        // Constructor for Employee
+        public Employee(String name, int age, String empId, double salary) {
+            super(name, age);
             this.empId = empId;
             this.salary = salary;
         }
 
+        // Method to display employee details
         public void displayEmployee() {
             displayPerson();
             System.out.println("Employee ID: " + empId);
@@ -37,8 +34,9 @@ public class PersonEmployee {
         }
     }
 
+    // Main method to execute the program
     public static void main(String[] args) {
-        Employee emp = new Employee("Bob", "1990-06-15", "EMP001", 60000);
+        Employee emp = new Employee("Bob", 34, "EMP001", 60000);
         emp.displayEmployee();
     }
 }
