@@ -1,4 +1,5 @@
-// experiment : 2
+// File: StudentCourseApp.java
+
 class Student {
     String name;
     String dob; // Accept DOB as plain string
