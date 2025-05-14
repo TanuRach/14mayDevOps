@@ -27,7 +27,8 @@ public class AnimalSoundDemo {
         myAnimal.makeSound();  
 
         myAnimal = new Animal();
-        System.out.print("Generic Animal says: ");
+        System.out.print("Generic Animal says:  ");
+        System.out.println("The animal makes a sound.");
         myAnimal.makeSound();  
     }
 }
